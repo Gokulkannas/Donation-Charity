@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/donate_pending.css">
+
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="pricing-plan">
+                <!-- <div class="pricing-header">
+                    <h4 class="pricing-title">Starter</h4>
+                    <div class="pricing-cost">$129.00</div>
+                    <div class="pricing-save">Save $29.00</div>
+                </div> -->
+                <form action="" method="get">
+                    <ul class="pricing-features">
+                        <li>Food Type : <%= collection.foodtype %> </li>
+                        <li>Quantity : <%= collection.quantity %> </li>
+                        <li>Address To Collect : <%= collection.address %> </li>
+                        <!-- <li>Address To Deleiver : <%= collection.drop %> </li> -->
+                        <li>Phone Given : <%= collection.mobile %> </li>
+                        <li>Time of Cooking :<br><br> <%= collection.cookingtime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </li>
+                        <li>Status : 
+                            <% if(collection.status == "assigned") { %>
+                                <i class="text-warning"><%=collection.status%></i>
+                            <%} else if(collection.status == "collected") { %>
+                                <i class="text-success"><%= collection.status %></i> 
+                            <% } %>
+                        </li>
+                        <% if(collection.status == "collected") { %>
+                            <li>
+                                Collection time: <br><br> <%= collection.collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %>
+                            </li>
+                        <% } %>
+                        <li class="button-container">   
+                            <% if(collection.status == "assigned") { %>
+                                <a href="/accepttransport/<%= collection._id %>"><button type="button" class="btn btn-warning">Accept</button></a>
+                            <% } else if(collection.status == "assigned") { %>
+                                <a href=""><button type="button" class="btn btn-warning">Assign to Agent</button></a>
+                            <% } %>
+                        </li>
+                    </ul>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+

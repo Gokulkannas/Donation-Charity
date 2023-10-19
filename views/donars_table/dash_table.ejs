@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/dash_table.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donations by you</h3><br>
+                    <div><h4><%= numCollectedDonations %></span></h4> </div>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donation requests not processed yet</h3><br>
+                    <h4 class="text-right"><span><%= numPendingDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donations accepted and to be assigned to agent</h3><br>
+                    <h4 class="text-right"><span><%= numAcceptedDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-secondary order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donations not collected yet</h3><br>
+                    <h4 class="text-right"><span><%= numAssignedDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+

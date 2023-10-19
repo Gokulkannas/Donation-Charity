@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/css/donate_pending.css">
+
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="pricing-plan">
+                <!-- <div class="pricing-header">
+                    <h4 class="pricing-title">Starter</h4>
+                    <div class="pricing-cost">$129.00</div>
+                    <div class="pricing-save">Save $29.00</div>
+                </div> -->
+                <form action="" method="get">
+                    <ul class="pricing-features">
+                        <li>Food Type : <%= donation.clothtype %> </li>
+                        <li>Quantity : <%= donation.quantity %> </li>
+                        <li>Quantity : <%= donation.quanlity %> </li>
+                        <li>Address Given : <%= donation.address %> </li>
+                        <li>Phone Given : <%= donation.mobile %> </li>
+                        <li>Status : 
+                            <% if(donation.status == "pending") { %>
+                                <i class="text-danger"><%=donation.status%></i>
+                            <%} else if(donation.status == "accepted") { %>
+                                <i class="text-success"><%=donation.status%></i>
+                            <% }else if(donation.status == "assigned") { %>
+                                <i class="text-warning"><%=donation.status%></i>
+                            <% }else if(donation.status == "collected") {  %>
+                                <i class="text-success"><%=donation.status%></i>
+                            <% } %>
+                        </li>
+                        <% if(donation.status == "assigned") { %>
+                            <li>
+                                Agent assigned : sanjay
+                            </li>
+                            <li>
+                                <span>Asssigned time:</span>
+                                <span> <br><br><%= donation.assignedTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+                            </li>   
+                        <% } %>
+                        
+                        <% if(donation.status == "collected") { %>
+                            <li>
+                                <span>Collection time:</span>
+                                <span> <br><br><%= donation.collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+                            </li>   
+                        <% } %>
+                        <li class="button-container">   
+                            <% if(donation.status == "pending") { %>
+                                <a href="/adminclothacceptassignagent/<%= donation._id %>"><button type="button" class="btn btn-warning">Accept</button></a>
+                                <a href="/adminclothreject/<%= donation._id %>"><button type="button" class="btn btn-danger">Reject</button></a>
+                            <% } else if(donation.status == "accepted") { %>
+                                <a href="/adminclothassisgningagent/<%= donation._id %>"><button type="button" class="btn btn-warning">Assign to Agent</button></a>
+                            <% } %>
+                        </li>
+                    </ul>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+

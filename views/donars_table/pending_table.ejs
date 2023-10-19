@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/donate_pending.css">
+
+<div class="container">
+    <div class="row gutters">
+        <% for(let i=0; i<pendingDonations.length; i++) { %>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="pricing-plan">
+                <!-- <div class="pricing-header">
+                    <h4 class="pricing-title">Starter</h4>
+                    <div class="pricing-cost">$129.00</div>
+                    <div class="pricing-save">Save $29.00</div>
+                </div> -->
+                <form action="/pending" method="post">
+                    <ul class="pricing-features">
+                        <li>Food Type : <%= pendingDonations[i].foodtype %> </li>
+                        <li>Quantity : <%= pendingDonations[i].quantity %> </li>
+                        <li>Address Given : <%= pendingDonations[i].address %> </li>
+                        <li>Phone Given : <%= pendingDonations[i].mobile %> </li>
+                        <li>Time of Cooking : <br> <br> <%= pendingDonations[i].cookingtime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></li>
+                        <li><span>Status:</span>
+						
+                            <% if(pendingDonations[i].status == "pending") { %>
+                                <span class="text-pending text-danger">Your donation request <br><br> hasn't been processed yet.</span>
+                            <% } else if(pendingDonations[i].status == "rejected") { %>
+                                <span class="text-rejected text-danger">Your donation request <br><br> has been rejected</span>
+                            <% } else if(pendingDonations[i].status == "accepted") { %>
+                                <span class="text-accepted text-warning">Your donation request <br><br> has been accepted.<br><br> Please wait while an <br><br> agent is being assigned.</span>
+                            <% } else if(pendingDonations[i].status == "assigned") { %>
+                                <span class="text-assigned text-success">Your donation request <br><br> has been accepted and <br><br> the agent has been assigned <br><br> for collecting food <br><br> from your house.</span>
+                            <% } %> 
+                        </li>
+                    </ul>
+                </form>
+                
+            </div>
+        </div>
+        <% } %>
+    </div>
+    </div>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="/css/edit_profile.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="/editagent?_method=PUT" method="post" class="form" >
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" name="agent[firstName]" placeholder="Enter full name" value="<%= currentUser.firstName %>" required />
+        </div>
+
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="email"  placeholder="Enter email address" value="<%= currentUser.email %>" disabled />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="number" name="agent[mobile]"  placeholder="Enter phone number" value="<%= currentUser.mobile %>"/>
+          </div>
+          <div class="input-box">
+            <label>Address</label>
+            <input type="text" name="agent[address]" placeholder="Enter your address" value="<%= currentUser.address %>"/>
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" name="agent[gender]" id="check-male" value="male" <% if(currentUser.gender=='male'){%> checked <%}%>/>
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="agent[gender]" value="female" <% if(currentUser.gender=='female'){%> checked <%}%> />
+              <label for="check-female">Female</label>
+            </div>
+
+          </div>
+        </div>
+
+        <button>Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
+

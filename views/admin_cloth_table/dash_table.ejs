@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/css/dash_table.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Admin</h3><br>
+                    <h4 class="text-right"><span>1</span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Agent</h3><br>
+                    <h4 class="text-right"><span><%= numAgents %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donar</h3><br>
+                    <h4 class="text-right"><span><%= numDonors %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-info order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Transport</h3><br>
+                    <h4 class="text-right"><span><%= numDriver %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">New Donation Requests</h3><br>
+                    <h4 class="text-right"><span><%= numPendingDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-secondary order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donations to be assigned to agent</h3><br>
+                    <h4 class="text-right"><span><%= numAcceptedDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-danger order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donations not collected yet</h3><br>
+                    <h4 class="text-right"><span><%= numAssignedDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-info order-card">
+                <div class="card-block">
+                    <h3 class="m-b-20">Donation Collected</h3><br>
+                    <h4 class="text-right"><span><%= numCollectedDonations %></span></h4>
+                    <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
